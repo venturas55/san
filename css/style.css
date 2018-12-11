@@ -1,0 +1,149 @@
+body {
+    background: #eedede;
+}
+
+
+
+#cabecera{
+    border: 2px solid black;
+    z-index: 1;
+    background: #619deb;
+    position: fixed;
+    top: 0px;
+    height: 80px;
+    width: 98%;
+}
+
+#cabecera img{
+    padding: 5px;
+    height: 70px;
+    width: auto;
+    border-radius: 0px;
+    display: block;
+    float: left;
+}
+
+#cabecera h1{
+    float: left;
+    margin-left: 40px;
+}
+
+#cabecera a{
+    display: block;
+    float: right;
+}
+
+#cuerpo{
+    width: 90%;
+    left:5%;
+    border: 1px solid #407ac7;
+    position:absolute;
+    top: 80px;
+    margin: 25px auto;
+}
+
+.container {
+    width: auto;
+    background: #dedeff;
+    border: 3px solid blue;
+    margin: 10px;
+    padding: 5px;
+    float: left;
+}
+
+#divcaracteristicas{
+    width: 25%;
+}
+
+#divlocalizacion{
+    width: 25%;
+}
+
+#divmantenimiento{
+    width: 60%;
+}
+
+#divfoto{
+    width: 30%;
+}
+
+#divfoto img{
+    width:100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+#divmenubotones{
+    width: auto;
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+    background: #dedede;
+    border: 1px solid black;
+}
+
+td {
+    padding: 2px;
+    text-align: center;
+    border: 1px dotted green;
+}
+input[type="text"]{
+    width: 98%;
+}
+
+.seleccion:hover {
+    background-color: rgb(31, 177, 26);
+}
+
+.boton1 {
+    display: inline-block;
+    border-radius: 10px;
+    margin: 5px auto;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+    padding: 5px 10px 5px 10px;
+    background-color: rgb(40, 124, 214);
+}
+
+.boton1:hover{
+    background-color: rgb(12, 52, 95);
+}
+
+.boton2 {
+    border-radius: 10px;
+    margin: 5px auto;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+    padding: 5px 10px 5px 10px;
+    background-color: rgb(202, 91, 115);
+}
+
+.boton2:hover{
+    background-color: rgb(170, 38, 56);
+}
+
+.boton3 {
+    border-radius: 10px;
+    margin: 5px auto;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+    padding: 5px 10px 5px 10px;
+    background-color: rgb(211, 172, 180);
+}
+
+.boton3:hover{
+    background-color: rgb(253, 5, 38);
+}
