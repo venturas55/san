@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
-<title>Proyecto BBDD de SAN</title>
+    <meta charset="uft-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />  
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/main.js" type='text/javascript'></script>
+    <title>Proyecto BBDD de SAN</title>
 </head>
 
 <body>
@@ -51,7 +58,7 @@
     <table>
         <tr> <th>Insertar foto...</th>     <td><input name="foto" type="file" /></td> </tr>
     </table>
-    <input type="submit" value="ENVIAR ALTA"/>
+    <input type="submit" value="ENVIAR ALTA" class="btn btn-success btn-sm"/>
 </form>
 
 
@@ -64,7 +71,7 @@
 
 
 
-<p>volver <a href="./san.php"> atras </a> </p>
+<p><a href="./san.php" class="btn btn-info btn-xs"> atras </a> </p>
 
 
 

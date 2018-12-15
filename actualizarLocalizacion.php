@@ -10,7 +10,7 @@
  
 <h1>MODIFICACION LOCALIZACION DE LA  <?php echo " ".$_GET['nif']; ?> </h1> 
  
-<img src="./img/<?php echo $_GET['nif']?>.png" \>
+<!-- <img src="./img/<?php echo $_GET['nif']?>.png" \> -->
 
 <div id="info" class="container">
 <form action="./modBBDDlocalizacion.php" method="post">

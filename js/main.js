@@ -1,4 +1,4 @@
-window.onload = function main() { //"Ponte a trabajar, no seas Jessie Pinkman"
+window.onload = function main() { 
     $(".seleccion").click(abrirLink);
 }
 

@@ -57,11 +57,17 @@
 
 
     #   HACEMOS EL INSERT DE LA FOTO
-    $dir_subida = "C:\\Bitnami\\wampstack-7.1.23-0\\apache2\\htdocs\\san\\img\\";
+    
+    # Si no existe la carpeta la creamos.
+    $carpeta= "./img/".$nif;
+    if(!file_exists($carpeta))
+            mkdir($carpeta,0777,TRUE);
+    
+    $dir_subida = $carpeta."/";
     $rutacompleta = $dir_subida . $nombrearchivo;
     echo "ruta completa ".$rutacompleta;
     
-    echo '<pre>';
+    echo "<pre>";
     if (move_uploaded_file($_FILES['foto']['tmp_name'], $rutacompleta)) {
         echo "El fichero es válido y se subió con éxito.\n";
     } else {
@@ -76,6 +82,6 @@
 
 
 ?>
-<a href=./san.php>Volver </a>
+<a href=./san.php>Volver</a>
 </body>
 </html>
