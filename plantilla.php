@@ -44,10 +44,10 @@
             <nav class="navbar navbar-dark  bg-primary">
                       <div class="container-fluid">
                        <ul class="nav navbar-nav">
-                            <li ><div class="itemMenu"><a href="https://www.valenciaport.com/"><img src="./img/images/logo-valenciaport-home.svg" /></a></div></li>        
+                            <li ><div class="itemMenu"><a target="_blank" href="https://www.valenciaport.com/"><img src="./img/images/logo-valenciaport-home.svg" /></a></div></li>        
                             <li ><div class="itemMenu"><h1>FICHA BALIZAMIENTO NIF: <?php echo " ".$_GET['nif'] ?></h1></div></li>
                             <li ><div class="itemMenu"><a href="./san.php" class="btn btn-success btn-sm btn-lg" >INICIO </a></div></li>
-                            <li ><div class="itemMenu"><a href="http://www.puertos.es/es-es/aton/Documents/formulario2.pdf" class="btn btn-danger btn-sm btn-lg" >DAR DE BAJA</a></div></li>
+                            <li ><div class="itemMenu"><a target="_blank" href="http://www.puertos.es/es-es/aton/Documents/formulario2.pdf" class="btn btn-danger btn-sm btn-lg" >DAR DE BAJA</a></div></li>
                         </ul>
                         </div>
             </nav>
@@ -182,7 +182,6 @@
                                 echo "<p>Error en la consulta.</p>\n";
                             } else {
                                 foreach ($localizacion as $i) {
-                                    echo "<tr> <th>NIF</th>     <td>$i[nif]</td> </tr>";
                                     echo "<tr> <th>Puerto</th>     <td>$i[puerto]</td> </tr>";
                                     echo "<tr> <th>Numero Local</th>     <td>$i[num_local]</td> </tr>";
                                     echo "<tr> <th>localizacion</th>     <td>$i[localizacion]</td> </tr>";
@@ -202,9 +201,46 @@
                         ?>
         </div>
     </div>
+    
+    
+    
+    <div class="row">
+                            <!-- CUARTO DIV OBSERVACIONES -->
+        <div class="col-sm-12 col-xs-12"> <!-- id="divmantenimiento" -->
+                <h1> Observaciones </h1>
+            
+                <table class="table table-striped"> 
+                        <tr>
+                            <th>Descripcion</th>
+                            <th>Borrar</th>
+                        </tr>
+                        <?php
+                                $consultaobservaciones = "SELECT * FROM observaciones  where nif=$nif";
+                                $observaciones = $db->query($consultaobservaciones);
+                                if (!$observaciones) {
+                                    echo "<p>Error en la consulta.</p>\n";
+                                } else {
+                                    foreach ($observaciones as $i) {
+                                        echo "<tr> <td>$i[observaciones]</td> <td> <a href=\"./borrarObservacion.php?nif=$i[nif]&observaciones=$i[observaciones]\" class=\"btn btn-primary btn-xs btn-block\"> borrar </a> </td>  </tr>\n";
+                                }
+                            }
+                        #$db= NULL;
+                        ?>
+                        <form action="./modBBDDobservacion.php" method="post">
+                            <input type="hidden" name="nif" value="<?php echo  $nif; ?>">
+                        <tr><td><input type="text" name="observacion" /></td>  <td>  <input type="submit" value="añadir" class="btn btn-primary btn-xs btn-block"/></td></tr>
+                        </form>
+                </table> 
+        </div>
+    </div>
+    
+    
+    
+    
+    
 
     <div class="row">
-                            <!-- CUARTO DIV EL MANTENIMIENTO -->
+                            <!-- QUINTO DIV  MANTENIMIENTO -->
         <div class="col-sm-12 col-xs-12"> <!-- id="divmantenimiento" -->
                 <h1> Mantenimiento </h1>
             
@@ -232,11 +268,7 @@
                         <tr><td><input type="date" name="fecha" /></td> <td><input type="text" name="mantenimiento" /></td>  <td>  <input type="submit" value="añadir" class="btn btn-primary btn-xs btn-block"/></td></tr>
                         </form>
                 </table> 
-
-
                     <!-- <a href="./actualizarMantenimiento.php?nif= <?php echo $nif ?> "  class="boton1">AÑADIR MANTENIMIENTO </a> -->
-
-
         </div>
     </div>
 

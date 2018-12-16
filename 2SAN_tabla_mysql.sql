@@ -6,7 +6,7 @@
 
 
 CREATE TABLE balizamiento (
-    nif numeric(6,1) NOT NULL,
+    nif VARCHAR(8) NOT NULL,
     num_internacional varchar(12),
     tipo varchar(250),
     telecontrol varchar(200),
@@ -19,8 +19,8 @@ CREATE TABLE balizamiento (
 
 
 CREATE TABLE localizacion(
-    nif numeric(5,0) NOT NULL,
-    puerto VARCHAR(30),
+    nif VARCHAR(8) NOT NULL,
+    puerto VARCHAR(50),
     num_local numeric(5,0),
     localizacion VARCHAR(50),
     latitud VARCHAR(15),
@@ -31,7 +31,7 @@ CREATE TABLE localizacion(
 
 
 CREATE TABLE mantenimiento(
-    nif numeric(5,0) NOT NULL,
+    nif VARCHAR(8) NOT NULL,
     fecha date,
     mantenimiento varchar(250),
     PRIMARY KEY (nif,fecha,mantenimiento),
@@ -40,20 +40,20 @@ CREATE TABLE mantenimiento(
 
 
 CREATE TABLE observaciones(
-    nif numeric(5,0) NOT NULL,
+    nif VARCHAR(8) NOT NULL,
     observaciones varchar(250) NOT NULL,
     PRIMARY KEY (nif,observaciones),
     CONSTRAINT observaciones_FK FOREIGN KEY (nif) REFERENCES balizamiento (nif)
 )engine=innodb DEFAULT CHARSET=latin1 COMMENT='tabla de observaciones del balizamiento';
 
 CREATE TABLE lampara(
-    nif numeric(5,0) NOT NULL,
+    nif VARCHAR(8) NOT NULL,
     altura INTEGER,
     elevación INTEGER,
     alcance INTEGER,
     linterna varchar(200),
-    PRIMARY KEY (nif,observaciones),
-    CONSTRAINT observaciones_FK FOREIGN KEY (nif) REFERENCES balizamiento (nif)
+    PRIMARY KEY (nif),
+    CONSTRAINT lampara_FK FOREIGN KEY (nif) REFERENCES balizamiento (nif)
 )engine=innodb DEFAULT CHARSET=latin1 COMMENT='tabla de detalles lampara';
 
 

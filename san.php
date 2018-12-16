@@ -12,17 +12,20 @@
     <title>Proyecto BBDD de SAN</title>
 </head>
 <body>
+       <?php 
+            $puerto=ucwords($_GET['puerto']);
+        ?>
 
                      <h1>Bienvenido a la BBDD de SAN. </h1>
 
                      <!-- CABECERA -->
-        <div data-spy="affix" data-offset-top="40">
+        <div data-spy="affix" data-offset-top="0">
             <nav class="navbar navbar-dark  bg-primary">
                 <div class="container-fluid">
                     <ul class="nav navbar-nav">
-                        <li ><div class="itemMenu"><a href="https://www.valenciaport.com/"><img src="./img/images/logo-valenciaport-home.svg" /></a></div></li>        
-                        <li ><div class="itemMenu"><h1>Listado Balizamiento <?php echo " ".$_GET['nif'] ?></h1></div></li>
-                        <li ><div class="itemMenu"><a href="./index.html" class="btn btn-success btn-sm btn-lg" >INICIO </a></div></li>
+                        <li ><div class="itemMenu"><a target="_blank" href="https://www.valenciaport.com/"><img src="./img/images/logo-valenciaport-home.svg" /></a></div></li>     
+                        <li ><div class="itemMenu"><h1>Listado Balizamiento de <?php echo " ".$puerto ?></h1></div></li>
+                        <li ><div class="itemMenu"><a href="./index.html" class="btn btn-success btn-sm btn-lg" >CAMBIAR DE PUERTO </a></div></li>
                         <li ><div class="itemMenu"><form action="./altaBalizamiento.php"><input type="submit" value="ALTA NUEVA" class="btn btn-success btn-sm"/></form></div></li>
                     </ul>
                 </div>
@@ -65,7 +68,7 @@
                     }
 
                     $db = conectaDb();
-                    $consulta = "SELECT * FROM balizamiento order by nif";
+                    $consulta = "SELECT * FROM balizamiento b, localizacion l where b.nif=l.nif AND l.puerto like '%$puerto%' order by l.nif";
                     $result = $db->query($consulta);
                     if (!$result) {
                         echo "<p>Error en la consulta.</p>\n";
@@ -97,9 +100,9 @@
                     <div class="footer-menu col-md-6">
                         <div class="container-fluid">
                                <ul class="nav navbar-nav">
-                                   <li class="itemFooter"><a href="https://www.valenciaport.com/politica-de-privacidad/">Política de privacidad</a></li>
-                                    <li class="itemFooter"><a href="https://www.valenciaport.com/nota-legal/">Nota legal</a></li>
-                                    <li class="itemFooter"><a href="https://www.valenciaport.com/politica-de-cookies/">Política de cookies</a></li>
+                                   <li class="itemFooter"><p><a target="_blank" href="https://www.valenciaport.com/politica-de-privacidad/">Política de privacidad</a></p></li>
+                                    <li class="itemFooter"><p><a target="_blank" href="https://www.valenciaport.com/nota-legal/">Nota legal</a></p></li>
+                                    <li class="itemFooter"><p><a target="_blank" href="https://www.valenciaport.com/politica-de-cookies/">Política de cookies</a></p></li>
                                 </ul>
                         </div>	
                     </div>

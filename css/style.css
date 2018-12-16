@@ -1,8 +1,23 @@
 body {
     //background: #62898e;
     background:url(../img/images/fondo-home.jpg) no-repeat center center;
-    
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    }
+
+body, input, select, textarea {
+    font-family: "Merriweather", Georgia, serif;
+    }
+
+button{
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
+
+h1, h2, h3, h4, h5, h6 {
+        font-family: "Source Sans Pro", Helvetica, sans-serif;}
 
 .navbar{
     padding:10px;
@@ -45,12 +60,15 @@ img:hover{
     opacity:1;
 }
 
-.imgpuertos::after{
-    content: "Puerto";
+.imgpuertos>p{
+    color: white;
     font-size: 200%;
     position: absolute;
-    bottom: 10px;
-    left: 40%;
+    bottom: 0px;
+    left: 35%;
+}
+.row > :first-child p{
+    left: 10%;
 }
 
 .footer-menu{
@@ -88,7 +106,7 @@ td {
     border: 1px dotted green;
 }
 
-.seleccion:hover {
+.seleccion::hover {
     background-color: rgb(31, 177, 26);
 }
 
@@ -176,9 +194,6 @@ input[type="text"]{
     width: 98%;
 }
 
-.seleccion:hover {
-    background-color: rgb(31, 177, 26);
-}
 
 .boton1 {
     display: inline-block;
