@@ -1,5 +1,7 @@
 body {
-    background: #62898e;
+    //background: #62898e;
+    background:url(../img/images/fondo-home.jpg) no-repeat center center;
+    
 }
 
 .navbar{
@@ -9,11 +11,15 @@ body {
 }
 
 .navbar img{
+    border: 0px solid black;
     border-radius: 5px;
     height: 70px;
     width: auto;
+    OPACITY:1;
 }
-
+.navbar h1{
+    margin-left: 30px;
+}
 
 
 .itemMenu{
@@ -25,12 +31,40 @@ body {
     top:0;
     width: 100%;
     z-index: 999; !important;
-    
 }
 
-img{
+.imgpuertos img{
+    border: 5px solid black;
+    border-radius: 20px;
     width: 100%;
     height: auto;
+    opacity: 0.5;
+}
+
+img:hover{
+    opacity:1;
+}
+
+.imgpuertos::after{
+    content: "Puerto";
+    font-size: 200%;
+    position: absolute;
+    bottom: 10px;
+    left: 40%;
+}
+
+.footer-menu{
+    margin-top: 0px;
+}
+
+.nav .footer{
+    height: 10px;
+    width: auto;
+}
+
+.itemFooter{
+    height: 10px;
+    width: auto;
 }
 
 table {
@@ -38,6 +72,7 @@ table {
     margin: auto;
     border: 1px solid black;
     border-collapse: collapse;
+    background:url(../img/images/fondo-home.jpg) no-repeat center center;
 }
 
 th {
@@ -53,7 +88,7 @@ td {
     border: 1px dotted green;
 }
 
-.seleccion : hover {
+.seleccion:hover {
     background-color: rgb(31, 177, 26);
 }
 

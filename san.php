@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="uft-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./css/bootstrap.min.css" rel="stylesheet" />  
@@ -17,33 +17,21 @@
 
                      <!-- CABECERA -->
         <div data-spy="affix" data-offset-top="40">
-            <nav class="navbar navbar-dark bg-primary">
-                      <div class="container-fluid">
-                       <ul class="nav navbar-nav">
-                            <li >  <!-- id="cabecera" -->
-                                       <div class="itemMenu">
-                                           <a href="https://www.valenciaport.com/">
-                                                <img src="./img/apvlogo.jpg" />  <!-- style="height:75px;"-->
-                                            </a>
-                                        </div> 
-                            </li>        
-                            <li >     <div class="itemMenu">
-                                        <h1>Listado Balizamiento Sagunto </h1>
-                                        </div>       
-
-                            </li>
-                            <li >     <div class="itemMenu">
-                                        <form action="./altaBalizamiento.php">
-                                                <input type="submit" value="ALTA NUEVA" class="btn btn-success btn-sm"/> 
-                                        </form>
-                                    </div>
-                            </li>
-                        </ul>
-                        </div>
+            <nav class="navbar navbar-dark  bg-primary">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav">
+                        <li ><div class="itemMenu"><a href="https://www.valenciaport.com/"><img src="./img/images/logo-valenciaport-home.svg" /></a></div></li>        
+                        <li ><div class="itemMenu"><h1>Listado Balizamiento <?php echo " ".$_GET['nif'] ?></h1></div></li>
+                        <li ><div class="itemMenu"><a href="./index.html" class="btn btn-success btn-sm btn-lg" >INICIO </a></div></li>
+                        <li ><div class="itemMenu"><form action="./altaBalizamiento.php"><input type="submit" value="ALTA NUEVA" class="btn btn-success btn-sm"/></form></div></li>
+                    </ul>
+                </div>
             </nav>
-        </div>
+        </div>                     
+                 
+                         
+                     <!-- CUERPO -->
     <div class="container">   <!-- id="cuerpo" -->
-                <!-- CUERPO -->
      <div class="row">    
         <div class="table-responsive">
             <table class="table" id="tabla"> 
@@ -91,11 +79,11 @@
             </table> 
         </div>
     </div>
+    </div>
     
     
     
-    
-    <div class="footer b_green">
+    <nav class="navbar navbar-light bg-primary footer">
 			<div class="container">
 			<div class="row">
 
@@ -105,19 +93,19 @@
                 </div>
 
 				<!-- footer menu -->
-				<div class="footer-menu col-md-6">
-                    <div class="menu-footermenu-container">
-                           <ul id="menu-footermenu" class="menu">
-                               <li id="menu-item-659" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-659"><a href="https://www.valenciaport.com/politica-de-privacidad/">Política de privacidad</a></li>
-                                <li id="menu-item-660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-660"><a href="https://www.valenciaport.com/nota-legal/">Nota legal</a></li>
-                                <li id="menu-item-3803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3803"><a href="https://www.valenciaport.com/politica-de-cookies/">Política de cookies</a></li>
-                            </ul>
-                    </div>	
-                </div>
+				
+                    <div class="footer-menu col-md-6">
+                        <div class="container-fluid">
+                               <ul class="nav navbar-nav">
+                                   <li class="itemFooter"><a href="https://www.valenciaport.com/politica-de-privacidad/">Política de privacidad</a></li>
+                                    <li class="itemFooter"><a href="https://www.valenciaport.com/nota-legal/">Nota legal</a></li>
+                                    <li class="itemFooter"><a href="https://www.valenciaport.com/politica-de-cookies/">Política de cookies</a></li>
+                                </ul>
+                        </div>	
+                    </div>
 			</div>
 			</div>
-		</div>
-    
+    </nav>
 
   
 
@@ -127,7 +115,7 @@
     
     
     
-</div>
+
 
 </body>
 </html>

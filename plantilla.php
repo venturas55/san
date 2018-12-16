@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html land="es">
 <head>
-    <meta charset="uft-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./css/bootstrap.min.css" rel="stylesheet" />  
@@ -44,22 +44,10 @@
             <nav class="navbar navbar-dark  bg-primary">
                       <div class="container-fluid">
                        <ul class="nav navbar-nav">
-                            <li >  <!-- id="cabecera" -->
-                                       <div class="itemMenu">
-                                           <a href="https://www.valenciaport.com/">
-                                                <img src="./img/apvlogo.jpg" />  <!-- style="height:75px;"-->
-                                            </a>
-                                        </div> 
-                            </li>        
-                            <li >     <div class="itemMenu">
-                                         <h1>FICHA BALIZAMIENTO NIF: <?php echo " ".$_GET['nif'] ?> </h1>
-                                        </div>       
-
-                            </li>
-                            <li >     <div class="itemMenu">
-                                             <a href="./san.php" class="btn btn-success btn-sm btn-lg" >INICIO </a> 
-                                    </div>
-                            </li>
+                            <li ><div class="itemMenu"><a href="https://www.valenciaport.com/"><img src="./img/images/logo-valenciaport-home.svg" /></a></div></li>        
+                            <li ><div class="itemMenu"><h1>FICHA BALIZAMIENTO NIF: <?php echo " ".$_GET['nif'] ?></h1></div></li>
+                            <li ><div class="itemMenu"><a href="./san.php" class="btn btn-success btn-sm btn-lg" >INICIO </a></div></li>
+                            <li ><div class="itemMenu"><a href="http://www.puertos.es/es-es/aton/Documents/formulario2.pdf" class="btn btn-danger btn-sm btn-lg" >DAR DE BAJA</a></div></li>
                         </ul>
                         </div>
             </nav>
@@ -138,7 +126,7 @@
                 <form action="actualizarBBDDfoto.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="nif" value="<?php echo  $nif; ?>">
                     <input type="file" name="foto" >
-                    <input type="submit" value="Actualizar" class="btn btn-primary btn-xs btn-block" />
+                    <input type="submit" value="Subir foto" class="btn btn-primary btn-xs btn-block" />
                 </form>
 
         </div>
