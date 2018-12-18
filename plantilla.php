@@ -46,7 +46,7 @@
                        <ul class="nav navbar-nav">
                             <li ><div class="itemMenu"><a target="_blank" href="https://www.valenciaport.com/"><img src="./img/images/logo-valenciaport-home.svg" /></a></div></li>        
                             <li ><div class="itemMenu"><h1>FICHA BALIZAMIENTO NIF: <?php echo " ".$_GET['nif'] ?></h1></div></li>
-                            <li ><div class="itemMenu"><a href="./san.php" class="btn btn-success btn-sm btn-lg" >INICIO </a></div></li>
+                            <li ><div class="itemMenu"><a href="./san.php" class="btn btn-success btn-sm btn-lg" >ATRAS </a></div></li>
                             <li ><div class="itemMenu"><a target="_blank" href="http://www.puertos.es/es-es/aton/Documents/formulario2.pdf" class="btn btn-danger btn-sm btn-lg" >DAR DE BAJA</a></div></li>
                         </ul>
                         </div>

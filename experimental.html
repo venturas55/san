@@ -25,27 +25,33 @@
                 <div class="container-fluid">
                     <ul class="nav navbar-nav">
                         <li ><div class="itemMenu"><a target="_blank"href="https://www.valenciaport.com/"><img src="./img/images/logo-valenciaport-home.svg" /></a></div></li>     
-                        <li ><div class="itemMenu"><h1>ELIJA UN PUERTO</h1></div></li>
-
+                        <li ><div class="itemMenu"><h1>SELECCIONE BALIZAMIENTO</h1></div></li>
+                        <li ><div class="itemMenu"><a href="./index.html" class="btn btn-success btn-sm btn-lg" >CAMBIAR DE PUERTO </a></div></li>
+                   
+                      
                     </ul>
                 </div>
             </nav>
         </div> 
+                        <div>
+                            <p>En este modo experimental solo funciona la baliza cardinal Norte del dique ampliacion cruceros.(Redirige a otra baliza que no corresponde)</p>
+                        </div>
                     <!-- CUERPO -->
              <div class="row">    
-                    <div class="col-md-4 col-xs-12">
-                        <a class="imgpuertos" href="./san.php?puerto=gandia"><p>Gandia</p><img src="./img/images/1gandia.jpg" alt=""></a>
+                    <div class="col-md-12 col-xs-12">
+                        <img src="./img/images/puertovalencia.png" usemap="#mapa_zonas">
+                        
+                        <map name="mapa_zonas">
+                            <area shape="rect" coords="104,171,175,151" href ="./plantilla.php?nif=26285">  <!-- Coords - Se trata de una lista de números separados por comas que representan las coordenadas del área. Rectangular = X1,Y1,X2,Y2 (coordenadas X e Y del vértice superior izquierdo y coordenadas X e Y del vértice inferior derecho). Circular = X1,Y1,R (coordenadas X e Y del centro y radio del círculo). Poligonal = X1,Y1,X2,Y2,...,XnYn (coordenadas de los vértices del polígono. Si las últimas coordenadas no son iguales que las primeras, se cierra automáticamente el polígono uniendo ambos vértices) -->
+                            
+                            
+                            
+                        </map>
+                        
                     </div>
-                    <div class="col-md-4 col-xs-12">
-                         <a class="imgpuertos" href="./san.php?puerto=valencia"><p>Valencia</p><img src="./img/images/2valencia.jpg" alt=""></a>
-                    </div>
-                    <div class="col-md-4 col-xs-12">
-                         <a class="imgpuertos" href="./san.php?puerto=sagunto"><p>Sagunto</p><img src="./img/images/3sagunto.jpg" alt=""></a>
-                    </div>
+                   
             </div>
-                <div class="row">
-                    <div class="col-md-12"> <a href="./experimental.html">Modo experimental </a></div>
-                </div>
+
          
    
     

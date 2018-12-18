@@ -37,7 +37,7 @@
     <div class="container">   <!-- id="cuerpo" -->
      <div class="row">    
         <div class="table-responsive">
-            <table class="table" id="tabla"> 
+            <table class="table"> 
                 <tr>
                     <th>NIF</th>
                     <th>Numero Internacional</th>

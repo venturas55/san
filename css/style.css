@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 .affix{
     top:0;
     width: 100%;
-    z-index: 999; !important;
+    z-index: 999 !important;
 }
 
 .imgpuertos img{
@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.5;
 }
 
-img:hover{
+.imgpuertos img:hover{
     opacity:1;
 }
 
@@ -85,12 +85,10 @@ img:hover{
     width: auto;
 }
 
-table {
+.table {
     width: 100%;
     margin: auto;
-    border: 1px solid black;
     border-collapse: collapse;
-    background:url(../img/images/fondo-home.jpg) no-repeat center center;
 }
 
 th {
@@ -106,137 +104,11 @@ td {
     border: 1px dotted green;
 }
 
-.seleccion::hover {
-    background-color: rgb(31, 177, 26);
+.seleccion:hover {
+    background: rgb(31, 177, 26) !important;
+    background-color: rgb(31, 177, 26) !important;
 }
 
-/*
-.cabecera{
-    border: 2px solid black;
-    z-index: 1;
-    background: #619deb;
-    position: fixed;
-    top: 0px;
-    height: 80px;
-    width: 98%;
+.table-hover > tbody > tr:hover {
+  background-color: #d43838;
 }
-#cabecera > img{
-    padding: 5px;
-    height: 70px;
-    width: auto;
-    border-radius: 0px;
-    display: block;
-    float: left;
-}
-
-#cabecera > h1{
-    float: left;
-    margin-left: 20px;
-}
-
-#cabecera > .boton1{
-    height: 60px;
-    display: block;
-    float: right;
-    margin-right: 10px;
-    top:50vh;
-}
-
-#cuerpo{
-    width: 90%;
-    left:5%;
-    border: 1px solid #407ac7;
-    position:absolute;
-    top: 80px;
-    margin: 25px auto;
-}
-
-.container {
-    width: auto;
-    background: #dedeff;
-    border: 3px solid blue;
-    margin: 10px;
-    padding: 5px;
-    float: left;
-}
-
-#divcaracteristicas{
-    width: 25%;
-}
-
-#divlocalizacion{
-    width: 25%;
-}
-
-#divmantenimiento{
-    width: 60%;
-}
-
-#divfoto{
-    width: 30%;
-}
-
-#divfoto img{
-    width:100%;
-    height: auto;
-    border-radius: 20px;
-}
-
-#divmenubotones{
-    width: auto;
-}
-
-p {
-    clear: both;
-}
-
-input[type="text"]{
-    width: 98%;
-}
-
-
-.boton1 {
-    display: inline-block;
-    border-radius: 10px;
-    margin: 5px auto;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    color: #ffffff;
-    padding: 5px 10px 5px 10px;
-    background-color: rgb(40, 124, 214);
-}
-
-.boton1:hover{
-    background-color: rgb(12, 52, 95);
-}
-
-.boton2 {
-    border-radius: 10px;
-    margin: 5px auto;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    color: #ffffff;
-    padding: 5px 10px 5px 10px;
-    background-color: rgb(202, 91, 115);
-}
-
-.boton2:hover{
-    background-color: rgb(170, 38, 56);
-}
-
-.boton3 {
-    border-radius: 10px;
-    margin: 5px auto;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    color: #ffffff;
-    padding: 5px 10px 5px 10px;
-    background-color: rgb(211, 172, 180);
-}
-
-.boton3:hover{
-    background-color: rgb(253, 5, 38);
-}*/
