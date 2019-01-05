@@ -37,7 +37,7 @@
     <div class="container">   <!-- id="cuerpo" -->
      <div class="row">    
         <div class="table-responsive">
-            <table class="table"> 
+            <table class="table table-hover"> 
                 <tr>
                     <th>NIF</th>
                     <th>Numero Internacional</th>
@@ -74,7 +74,7 @@
                         echo "<p>Error en la consulta.</p>\n";
                     } else {
                         foreach ($result as $i) {
-                            echo "<tr  class=\"seleccion\">  <td> $i[nif] </td> <td>$i[num_internacional]</td>  <td>$i[tipo]</td>    <td>$i[alcance]</td>  <td>$i[apariencia]</td> <td>$i[periodo]</td> <td>$i[caracteristica]</td>    </tr>\n";
+                            echo "<tr  class=\"seleccion\" style=\"background: red\">  <td> $i[nif] </td> <td>$i[num_internacional]</td>  <td>$i[tipo]</td>    <td>$i[alcance]</td>  <td>$i[apariencia]</td> <td>$i[periodo]</td> <td>$i[caracteristica]</td>    </tr>\n";
                     }
                 }
                 $db= null;

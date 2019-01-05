@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html land="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="uft-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./css/bootstrap.min.css" rel="stylesheet" />  
-    <link href="./css/style.css" rel="stylesheet" type="text/css"/>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
     <title>Proyecto BBDD de SAN</title>
 </head>
 
@@ -38,102 +34,53 @@
 
             $db = conectaDb();
 ?>
-
+<div class="container" > <!-- id="cuerpo" -->
              <!-- CABECERA -->
-        <div data-spy="affix" data-offset-top="0">
-            <nav class="navbar navbar-dark  bg-primary">
-                      <div class="container-fluid">
-                       <ul class="nav navbar-nav">
-                            <li ><div class="itemMenu"><a target="_blank" href="https://www.valenciaport.com/"><img src="./img/images/logo-valenciaport-home.svg" /></a></div></li>        
-                            <li ><div class="itemMenu"><h1>FICHA BALIZAMIENTO NIF: <?php echo " ".$_GET['nif'] ?></h1></div></li>
-                            <li ><div class="itemMenu"><a href="./san.php" class="btn btn-success btn-sm btn-lg" >ATRAS </a></div></li>
-                            <li ><div class="itemMenu"><a target="_blank" href="http://www.puertos.es/es-es/aton/Documents/formulario2.pdf" class="btn btn-danger btn-sm btn-lg" >DAR DE BAJA</a></div></li>
-                        </ul>
-                        </div>
-            </nav>
+        <div class="row">
+            <div class="col-sm-10 cabecera" >  <!-- id="cabecera" -->
+                <img src="./img/apvlogo.jpg" />
+                <h1>FICHA BALIZAMIENTO NIF: <?php echo " ".$_GET['nif'] ?> </h1>
+            </div>
+            <div class="col-sm-2" > 
+                <a href="./san.php" class="btn btn-primary btn-lg btn-block" >INICIO </a>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-sm-12" >
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-stripped active" style="min-width:2em;width:90%">90%</div>
+                    <div class="progress-bar progress-bar-info progress-bar-stripped" style="min-width:2em;width:10%">10%</div>
+                </div>
+            </div>
+        </div>
+   
     
-                                <!-- CUERPO -->
+            <!-- CUERPO -->
 
-   <div class="container" > <!-- id="cuerpo" --> 
-            <!-- PRIMER DIV LA FOTO -->
+    
+                            <!-- PRIMER DIV LA FOTO -->
     <div class="row">
-        <div  class="col-sm-4 col-xs-12"> <!-- id="divfoto" -->
-                     
-            <div class="carousel slide" id="miCarrusel" data-ride="carousel">
-                       <ol class="carousel-indicators">
-                                  <?php
-                                        $directory="img/".$nif;
-                                        if(file_exists($directory))
-                                        {
-                                            $dirint = dir($directory);
-                                            $cont=0;
-                                            while (($archivo = $dirint->read()) !== false)
-                                            {
-                                                if ( $archivo!="." && $archivo!=".."){
-                                                    if ($cont==0){
-                                                        echo "<li data-target='miCarrusel' data-slide-to='".$cont."' class='active'></li>";
-                                                        $cont++;}
-                                                    else{
-                                                        echo "<li data-target='miCarrusel' data-slide-to='".$cont."'></li>";
-                                                        $cont++;}
-                                                }
+        <div  class="col-sm-4"> <!-- id="divfoto" -->
+                <?php
+                if (file_exists("./img/".$nif.".png"))
+                    echo "<img src=\"./img/" . $nif . ".png\"> ";
+                else if (file_exists("./img/".$nif.".jpg"))
+                    echo "<img src=\"./img/" . $nif . ".jpg\"> ";
+                else    
+                        echo "Imagen N/A";
+                ?>
 
-
-                                            }
-                                            $dirint -> close();
-                                        }
-                                    ?>
-                        </ol>
-                   
-                       <div class="carousel-inner">
-                                <?php
-                                        $cont=0;
-                                        $directory="img/".$nif;
-                                        if(file_exists($directory))
-                                        {
-                                                $dirint = dir($directory);
-                                                while (($archivo = $dirint->read()) !== false)
-                                                {
-                                                    if ( $archivo!="." && $archivo!=".."){
-                                                        if($cont==0){
-                                                            echo "<div class='item active'>";
-                                                            echo "<img src='./img/".$nif."/".$archivo."' >";
-                                                            echo "<div class='carousel-caption'>" .$archivo."</div>";
-                                                            echo "</div>";
-                                                            $cont++;
-                                                        }
-                                                        else{
-                                                            echo "<div class='item'>";
-                                                            echo "<img src='./img/".$nif."/".$archivo."' >";
-                                                            echo "<div class='carousel-caption'>" .$archivo."</div>";
-                                                            echo "</div>";
-                                                            $cont++;
-                                                            }
-                                                    }
-                                                }
-                                                $dirint -> close();
-                                        }
-                                        else{
-                                            echo "<h1>No hay imagenes</h1>";
-                                            echo "<h1>disponibles.</h1>";}
-                                ?>
-                        </div>
-
-                            <a href="#miCarrusel" data-slide="prev" class="left carousel-control">   <span class="glyphicon glyphicon-chevron-left"></span>      </a>
-                            <a href="#miCarrusel" data-slide="next" class="right carousel-control">    <span class="glyphicon glyphicon-chevron-right"></span>   </a>
-                    </div>
                 <form action="actualizarBBDDfoto.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="nif" value="<?php echo  $nif; ?>">
                     <input type="file" name="foto" >
-                    <input type="submit" value="Subir foto" class="btn btn-primary btn-xs btn-block" />
+                    <input type="submit" value="Actualizar" class="btn btn-primary btn-lg btn-block" />
                 </form>
 
         </div>
 
 
                                 <!-- SEGUNDO DIVS LA CARACTERISTICAS -->
-        <div class="col-sm-4 col-xs-12">  <!-- id="divcaracteristicas" -->
+        <div class="col-sm-4">  <!-- id="divcaracteristicas" -->
             <h1> Caracteristicas </h1>
                         <table class="table table-striped"> 
                             <?php
@@ -165,14 +112,14 @@
                                                 "&apariencia=".$i[apariencia].
                                                 "&periodo=".$i[periodo].
                                                 "&caracteristica=".$i[caracteristica].         
-                                                " class=\"btn btn-primary btn-xs btn-block\"\">ACTUALIZAR CARACTERISTICAS</a>";
+                                                " class=\"btn btn-primary btn-lg btn-block\"\">ACTUALIZAR CARACTERISTICAS</a>";
                                              }
                                     }
                             ?>
         </div>
   
                             <!-- TERCER DIV LA LOCALIZACION -->
-        <div class="col-sm-4 col-xs-12">      <!-- id="divlocalizacion" -->
+        <div class="col-sm-4">      <!-- id="divlocalizacion" -->
             <h1> Localizacion </h1>
                     <table class="table table-striped"> 
                         <?php
@@ -182,6 +129,7 @@
                                 echo "<p>Error en la consulta.</p>\n";
                             } else {
                                 foreach ($localizacion as $i) {
+                                    echo "<tr> <th>NIF</th>     <td>$i[nif]</td> </tr>";
                                     echo "<tr> <th>Puerto</th>     <td>$i[puerto]</td> </tr>";
                                     echo "<tr> <th>Numero Local</th>     <td>$i[num_local]</td> </tr>";
                                     echo "<tr> <th>localizacion</th>     <td>$i[localizacion]</td> </tr>";
@@ -195,53 +143,16 @@
                                     "&latitud=".$i[latitud].
                                     "&longitud=".$i[longitud].
                                     "&tipo=".$tipo.
-                                    " class=\"btn btn-primary btn-xs btn-block\"\">ACTUALIZAR LOCALIZACION </a>";
+                                    " class=\"btn btn-primary btn-lg btn-block\"\">ACTUALIZAR LOCALIZACION </a>";
                                     }
                                 }
                         ?>
         </div>
     </div>
-    
-    
-    
-    <div class="row">
-                            <!-- CUARTO DIV OBSERVACIONES -->
-        <div class="col-sm-12 col-xs-12"> <!-- id="divmantenimiento" -->
-                <h1> Observaciones </h1>
-            
-                <table class="table table-striped"> 
-                        <tr>
-                            <th>Descripcion</th>
-                            <th>Borrar</th>
-                        </tr>
-                        <?php
-                                $consultaobservaciones = "SELECT * FROM observaciones  where nif=$nif";
-                                $observaciones = $db->query($consultaobservaciones);
-                                if (!$observaciones) {
-                                    echo "<p>Error en la consulta.</p>\n";
-                                } else {
-                                    foreach ($observaciones as $i) {
-                                        echo "<tr> <td>$i[observaciones]</td> <td> <a href=\"./borrarObservacion.php?nif=$i[nif]&observaciones=$i[observaciones]\" class=\"btn btn-primary btn-xs btn-block\"> borrar </a> </td>  </tr>\n";
-                                }
-                            }
-                        #$db= NULL;
-                        ?>
-                        <form action="./modBBDDobservacion.php" method="post">
-                            <input type="hidden" name="nif" value="<?php echo  $nif; ?>">
-                        <tr><td><input type="text" name="observacion" /></td>  <td>  <input type="submit" value="añadir" class="btn btn-primary btn-xs btn-block"/></td></tr>
-                        </form>
-                </table> 
-        </div>
-    </div>
-    
-    
-    
-    
-    
 
     <div class="row">
-                            <!-- QUINTO DIV  MANTENIMIENTO -->
-        <div class="col-sm-12 col-xs-12"> <!-- id="divmantenimiento" -->
+                            <!-- CUARTO DIV EL MANTENIMIENTO -->
+        <div class="col-sm-12"> <!-- id="divmantenimiento" -->
                 <h1> Mantenimiento </h1>
             
                 <table class="table table-striped"> 
@@ -268,7 +179,11 @@
                         <tr><td><input type="date" name="fecha" /></td> <td><input type="text" name="mantenimiento" /></td>  <td>  <input type="submit" value="añadir" class="btn btn-primary btn-xs btn-block"/></td></tr>
                         </form>
                 </table> 
+
+
                     <!-- <a href="./actualizarMantenimiento.php?nif= <?php echo $nif ?> "  class="boton1">AÑADIR MANTENIMIENTO </a> -->
+
+
         </div>
     </div>
 
@@ -276,7 +191,7 @@
                 <div id="divmenubotones">
                         <form action="./borrarBalizamiento.php" method="post">
                             <input type="hidden" name="nif" value="<?php echo $nif; ?>">
-                            <input type="submit" value="Eliminar" class="btn btn-danger btn-xs"/>
+                            <input type="submit" value="Eliminar" class="btn btn-primary btn-lg btn-block"/>
                         </form>
                 </div>
         </div>
